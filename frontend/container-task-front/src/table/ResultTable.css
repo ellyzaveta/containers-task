@@ -1,0 +1,7 @@
+.cell {
+    width: 20%; 
+}
+
+.highlighted-row {
+    background-color: #D6D6D6;
+}

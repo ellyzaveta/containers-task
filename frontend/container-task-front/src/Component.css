@@ -1,0 +1,12 @@
+.component {
+    padding: 50px 200px;
+}
+
+h2 {
+    font-family: Montserrat;
+    font-size: 30px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: normal;
+    text-transform: capitalize;
+}
