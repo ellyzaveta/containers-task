@@ -8,29 +8,8 @@
 
 ## Results
 
-| | Computation Results | | | | | | |
-| --- | --- | --- | --- | --- | --- | --- | --- |
-| Data | Analytical Calculation (number of containers) | | | | | | |
-| Row 1 | 9 | | | | | | |
-| Row 2 | 10 | | | | | | |
-| Row 3 | 13 | | | | | | |
-| Rows 1+2+3 | 31 | | | | | | |
-| | | Number of Containers | Computational Complexity | | | | | |
-| | | Without Sorting | Without Sorting | | | | | |
-| | | NFA | FFA | WFA | BFA | NFA | FFA | WFA | BFA |
-| Row 1 | 12 | 10 | 10 | 10 | 20 | 73 | 91 | 150 |
-| Row 2 | 13 | 11 | 12 | 11 | 20 | 84 | 116 | 171 |
-| Row 3 | 15 | 15 | 15 | 15 | 20 | 132 | 163 | 290 |
-| Rows 1+2+3 | 40 | 35 | 37 | 35 | 60 | 779 | 949 | 1747 |
-| | | With Sorting (Ascending) | With Sorting (Ascending) | | | | | |
-| | | NFA | FFA | WFA | BFA | NFA | FFA | WFA | BFA |
-| Row 1 | 12 | 12 | 12 | 12 | 80 | 146 | 157 | 223 |
-| Row 2 | 11 | 11 | 11 | 11 | 80 | 135 | 145 | 200 |
-| Row 3 | 15 | 15 | 15 | 15 | 80 | 185 | 199 | 304 |
-| Rows 1+2+3 | 39 | 39 | 39 | 39 | 306 | 1047 | 1085 | 1826 |
-| | | With Sorting (Descending) | With Sorting (Descending) | | | | | |
-| | | NFA | FFA | WFA | BFA | NFA | FFA | WFA | BFA |
-| Row 1 | 12 | 10 | 10 | 10 | 80 | 148 | 210 | 324 |
-| Row 2 | 11 | 10 | 10 | 10 | 80 | 136 | 153 | 215 |
-| Row 3 | 15 | 14 | 14 | 14 | 80 | 205 | 244 | 391 |
-| Rows 1+2+3 | 39 | 33 | 33 | 33 | 306 | 1156 | 1493 | 2629 |
+Based on the obtained results, it can be said that if the calculation speed is important and the order of the data does not need to be taken into account and there is no need to optimize the number of containers, NFA is the best choice. Algorithms FFA, WFA, BFA in almost all cases show the same results of determining the number of containers, but at the same time there is a noticeable difference in computational complexity: the complexity of the BFA algorithm is almost 2 times greater than that of FFA and WFA. This is because the BFA algorithm, when searching for the most suitable container, at each iteration of the loop checks not only whether the current container can contain the item, but also whether it has a minimum free space so that the load can still be placed. However, on the other hand, BFA guarantees the most optimized number of containers.
+
+Regarding the method of data ordering, the worst results of determining the number of containers can be observed with the input data ordered in ascending order. This is because smaller loads are placed in one container and many small containers are created for larger loads that come later.
+
+The studied algorithms showed the best results on input data ordered in descending order. This order of elements allows to reduce the number of containers used, due to more efficient placement of large loads. However, it is worth remembering that in this case a larger number of comparisons is required.
